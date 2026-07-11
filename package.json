@@ -1,0 +1,17 @@
+{
+  "name": "full-stack-on-cloudlare-starter-repo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build-package": "pnpm --filter @repo/data-ops run build",
+    "dev-frontend": "pnpm --filter user-application run dev",
+    "dev-data-service": "pnpm --filter data-service run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.19.7",
+    "typescript": "^5.9.3"
+  }
+}
