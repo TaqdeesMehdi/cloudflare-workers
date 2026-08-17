@@ -25,7 +25,7 @@ export function TopCountriesTable() {
 
   return (
     <Card className="hover:shadow-md transition-all duration-200 h-64 flex flex-col">
-      <CardHeader className="flex-shrink-0">
+      <CardHeader className="shrink-0">
         <CardTitle className="flex items-center gap-2">
           <Flag className="h-5 w-5" />
           Top Countries

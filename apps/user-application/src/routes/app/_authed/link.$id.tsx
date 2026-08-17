@@ -44,7 +44,7 @@ function RouteComponent() {
 
   if (!linkInfo) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-background via-muted to-muted/50 p-6">
+      <div className="min-h-screen bg-linear-to-br from-background via-muted to-muted/50 p-6">
         <div className="w-full space-y-8">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">

@@ -50,7 +50,7 @@ function RouteComponent() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted to-muted/50 p-6">
+    <div className="min-h-screen bg-linear-to-br from-background via-muted to-muted/50 p-6">
       <div className="max-w-2xl mx-auto space-y-8">
         {/* Main Form */}
         <Card className="shadow-xl">
