@@ -9,38 +9,55 @@
 	"compatibility_date": "2025-06-17",
 	"compatibility_flags": ["nodejs_compat"],
 	"observability": {
-		"enabled": true,
+		"enabled": true
 	},
+	"browser": {
+		"binding": "VIRTUAL_BROWSER"
+	},
+	"ai": {
+		"binding":"AI"
+	},
+	"r2_buckets": [{
+		"binding": "BUCKET",
+		"bucket_name": "smart-links-eval-stage"
+	}],
 	"d1_databases": [
 		{
 			"binding": "DB",
 			"database_id": "bd12a7eb-8c08-415a-b6b7-6f1aedb247a1",
-			"remote": true,
-		},
+			"remote": true
+		}
 	],
 	"kv_namespaces": [
 		{
 			"binding": "CACHE",
 			"id": "01e0bee3d88f403ab23080e56a72c2a9",
-			"remote": true,
-		},
+			"remote": true
+		}
 	],
 	"queues": {
 		"consumers": [
 			{
 				"queue": "smart-links-data-queue-stage",
-				"dead_letter_queue": "smart-links-data-dead-letter-queue-stage",
+				"dead_letter_queue": "smart-links-data-dead-letter-queue-stage"
 			},
 			{
 				"queue": "smart-links-data-dead-letter-queue-stage",
-				"retry_delay": 0,
-			},
+				"retry_delay": 0
+			}
 		],
 		"producers": [
 			{
 				"binding": "QUEUE",
-				"queue": "smart-links-data-queue-stage",
-			},
-		],
+				"queue": "smart-links-data-queue-stage"
+			}
+		]
 	},
+	"workflows": [
+		{
+			"binding": "DESTINATION_EVALUATION_WORKFLOW",
+			"name": "destination-evaluation-workflow",
+			"class_name": "DestinationEvaluationWorkflow"
+		}
+	]
 }

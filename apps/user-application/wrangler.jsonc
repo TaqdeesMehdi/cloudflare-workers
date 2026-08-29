@@ -9,16 +9,17 @@
   "compatibility_date": "2025-06-17",
   "assets": {
     "binding": "ASSETS",
-    "not_found_handling": "single-page-application",
+    "not_found_handling": "single-page-application"
   },
   "observability": {
-    "enabled": true,
+    "enabled": true
   },
   "d1_databases": [
     {
       "binding": "DB",
+      "database_name": "cloudflare-workers-stage",
       "database_id": "bd12a7eb-8c08-415a-b6b7-6f1aedb247a1",
-      "remote": true,
-    },
-  ],
+      "remote": true
+    }
+  ]
 }

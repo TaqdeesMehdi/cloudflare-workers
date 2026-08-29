@@ -16,7 +16,7 @@ import { useNavigate } from "@tanstack/react-router";
 export function ProblematicLinksTable() {
   const navigate = useNavigate();
 
-  const { data: problematicDestinations } = useSuspenseQuery(
+  const { data: problematicDestinations }: any = useSuspenseQuery(
     trpc.evaluations.problematicDestinations.queryOptions(),
   );
 
@@ -35,7 +35,7 @@ export function ProblematicLinksTable() {
 
   return (
     <Card className="hover:shadow-md transition-all duration-200 h-64 flex flex-col">
-      <CardHeader className="flex-shrink-0">
+      <CardHeader className="shrink-0">
         <CardTitle className="flex items-center gap-2 text-destructive">
           <AlertTriangle className="h-5 w-5" />
           Problematic Links
@@ -53,7 +53,7 @@ export function ProblematicLinksTable() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {problematicDestinations.map((destination) => (
+              {problematicDestinations.map((destination: any) => (
                 <TableRow
                   key={destination.id}
                   className="cursor-pointer hover:bg-muted/50"
