@@ -5,11 +5,12 @@ import { z } from "zod";
 import {
   getEvaluations,
   getNotAvailableEvaluation,
-} from "../../../../../packages/data-ops/src/queries/evaluations";
+} from "@repo/data-ops/queries/evaluations";
 export const evaluationsTrpcRoutes = t.router({
   problematicDestinations: t.procedure.query(async ({ ctx }) => {
     return await getNotAvailableEvaluation(ctx.userInfo.userId);
   }),
+
   recentEvaluations: t.procedure
     .input(
       z
