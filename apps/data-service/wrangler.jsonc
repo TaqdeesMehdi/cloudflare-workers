@@ -11,7 +11,9 @@
 	"observability": {
 		"enabled": true
 	},
-	"browser": {
+"env": {
+	"stage":{
+			"browser": {
 		"binding": "VIRTUAL_BROWSER"
 	},
 	"ai": {
@@ -74,9 +76,79 @@
 	},
 	"migrations": [{
 		"tag": "v1",
-		"new_classes": ["EvaluationScheduler"]
+		"new_sqlite_classes": ["EvaluationScheduler"]
 	},{
 		"tag": "v2",
 		"new_sqlite_classes": ["LinkClickTracker"]
 	}]
+	},
+	"production":{
+		"browser": {
+		"binding": "VIRTUAL_BROWSER"
+	},
+	"ai": {
+		"binding":"AI"
+	},
+	"r2_buckets": [{
+		"binding": "BUCKET",
+		"bucket_name": "smart-links-eval-production"
+	}],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_id": "341558a5-279d-4cb4-8334-c54e2f8b386e"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "CACHE",
+			"id": "2a3a965cef744ae18632760ccdf77a5d"
+		}
+	],
+	"queues": {
+		"consumers": [
+			{
+				"queue": "smart-links-data-queue-production",
+				"dead_letter_queue": "smart-links-data-dead-letter-queue-production"
+			},
+			{
+				"queue": "smart-links-data-dead-letter-queue-production",
+				"retry_delay": 0
+			}
+		],
+		"producers": [
+			{
+				"binding": "QUEUE",
+				"queue": "smart-links-data-queue-production"
+			}
+		]
+	},
+	"workflows": [
+		{
+			"binding": "DESTINATION_EVALUATION_WORKFLOW",
+			"name": "destination-evaluation-workflow-production",
+			"class_name": "DestinationEvaluationWorkflow"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "EVALUATION_SCHEDULER",
+				"class_name": "EvaluationScheduler"
+			},
+			{
+				"name": "LINK_CLICK_TRACKER_OBJECT",
+				"class_name": "LinkClickTracker"
+			}
+		]
+	},
+	"migrations": [{
+		"tag": "v1",
+		"new_sqlite_classes": ["EvaluationScheduler"]
+	},{
+		"tag": "v2",
+		"new_sqlite_classes": ["LinkClickTracker"]
+	}]
+	}
+}
 }

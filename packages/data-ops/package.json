@@ -50,6 +50,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260120.0",
     "@types/node": "^22.19.7",
+    "dotenv-cli": "^11.0.0",
     "drizzle-kit": "^0.31.8",
     "tsc-alias": "^1.8.16",
     "wrangler": "^4.59.3"

@@ -14,12 +14,41 @@
   "observability": {
     "enabled": true
   },
-  "d1_databases": [
+"env": {
+  "stage":{
+      "d1_databases": [
     {
       "binding": "DB",
       "database_name": "cloudflare-workers-stage",
       "database_id": "bd12a7eb-8c08-415a-b6b7-6f1aedb247a1",
       "remote": true
     }
+  ],
+  "services": [
+    {
+      "binding": "BACKEND_SERVICE",
+      "service": "data-service-stage",
+      "remote": true
+    }
   ]
+  },
+  "production":{
+      "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cloudflare-workers-production",
+      "database_id": "341558a5-279d-4cb4-8334-c54e2f8b386e",
+    
+    }
+  ],
+  "services": [
+    {
+      "binding": "BACKEND_SERVICE",
+      "service": "data-service-production",
+      
+    }
+  ]
+  }
+}
+  
 }
