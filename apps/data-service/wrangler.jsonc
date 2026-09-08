@@ -13,6 +13,12 @@
 	},
 "env": {
 	"stage":{
+		"routes": [
+			{
+				"custom_domain": true,
+				"pattern": "go-stage.workerflare.store"
+			}
+		],
 			"browser": {
 		"binding": "VIRTUAL_BROWSER"
 	},
@@ -83,6 +89,12 @@
 	}]
 	},
 	"production":{
+		"routes": [
+			{
+				"custom_domain": true,
+				"pattern": "go.workerflare.store"
+			}
+		],
 		"browser": {
 		"binding": "VIRTUAL_BROWSER"
 	},

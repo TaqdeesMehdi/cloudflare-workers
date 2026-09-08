@@ -16,6 +16,12 @@
   },
 "env": {
   "stage":{
+    "routes": [
+      {
+        "custom_domain": true,
+        "pattern": "stage.workerflare.store"
+      }
+    ],
       "d1_databases": [
     {
       "binding": "DB",
@@ -33,6 +39,12 @@
   ]
   },
   "production":{
+    "routes": [
+      {
+        "custom_domain": true,
+        "pattern": "workerflare.store"
+      }
+    ],
       "d1_databases": [
     {
       "binding": "DB",
